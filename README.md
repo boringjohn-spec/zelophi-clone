@@ -18,6 +18,7 @@ Then open `http://localhost:8743/index.html`.
 
 - `index.html` — homepage
 - `contact.html` — contact page
+- `community.html` — Community page (Zelophi Kids Connect / Zelophi Kids Arise) — added after the initial clone, not part of the original site; built from supplied copy using the existing design system end-to-end (see `design-system.md` §12)
 
 ## Documentation
 

@@ -1,6 +1,6 @@
 # Website Structure — Zelophi
 
-Source: https://zelophi.com/ (sitemap confirms exactly 2 routes). Built/published with Framer.
+Source: https://zelophi.com/ (sitemap confirms exactly 2 routes on the original site). Built/published with Framer. A third route, `/community`, was added to this clone afterward (not present on the original site) to host the "Zelophi Kids Connect" / "Zelophi Kids Arise" content supplied separately — see `design-system.md` §12 for how it extends the system.
 
 ```
 Zelophi (zelophi.com)
@@ -91,14 +91,40 @@ Zelophi (zelophi.com)
     │   └── Photo (child on couch with phone)
     ├── Final CTA band (shared, identical to Home: "The safer way for children to explore online.")
     └── Footer (shared, identical to Home)
+│
+└── /community (Community) — added to this clone; not part of the original site
+    ├── Header (shared, identical to Home/Contact, now including the "Community" nav item)
+    ├── Hero — "Zelophi Kids" intro
+    │   ├── Eyebrow: "Zelophi Kids"
+    │   ├── H1: "Every experience, word, and interaction builds the mental framework your child relies on daily."
+    │   ├── Lede: "Zelophi Kids Connect creates an engaging environment focused on biblical truth, creative expression, and healthy habits."
+    │   ├── Caption: "Three hours that spark a lifetime of focus for your child(ren)."
+    │   └── CTA: "Reserve your child's place" → /contact (placeholder — see design-system.md §12)
+    ├── Age groups ("Zelophi Kids Connect")
+    │   ├── Eyebrow: "Zelophi Kids Connect"
+    │   ├── H2: "Every age learns at their own pace with age-appropriate tools."
+    │   └── 4-up age-card grid: Rubies (0–2) · Beryls (3–5) · Crystals (6–8) · Emeralds (9–11), each with its own accent color and description
+    ├── Quote: "Who are they becoming when no one is watching? Give them the environment that shapes their best self."
+    ├── "Zelophi Kids Arise" intro
+    │   ├── Eyebrow: "Zelophi Kids Arise"
+    │   ├── H2: "A week for children aged 0–11."
+    │   └── Paragraph: "Daily worship, age-tailored Bible teaching, creative expression and a memory verse every day. Five days away from screens. Five days building character."
+    ├── "Our Activity" — 3-up card row: Consistent daily rhythm · Faith in practice · Pioneer community
+    ├── "What's Inside" — checklist: Complete learning pack · Daily memory verse cards · Interactive activity guides
+    │   ├── Note: "And the moment you book, the full day-by-day plan lands in your inbox."
+    │   ├── Details: "Monday 26 – Friday 30 October 2026"
+    │   └── CTA: "Save your child's place" → /contact (placeholder)
+    ├── Final CTA band — "Zelophi gives families control over their technology. Zelophi Kids gives children a room where their direction is shaped." + "Explore the product" → /
+    └── Footer (shared; "Community" column now links its first item, "Zelophi Kids", to `/community`)
 ```
 
 ## Navigation structure
 
 - In-page anchors on Home: `#how-it-works`, `#FEATURES`, `#Pricing` (note the mixed casing — reproduced verbatim as anchor IDs for fidelity, though case is irrelevant for `id` matching in HTML).
+- Main nav now has 4 items: How it works · Features · Pricing · **Community** (`/community`, new) — present identically on all three pages' pill nav and mobile nav.
 - Cross-page link: nav CTA + mobile menu CTA → `/contact`.
 - Footer "Product" column items point to the same in-page anchors as the main nav (How It Works, Features, Pricing) plus a non-functional "Chrome Extension" item (no target found — treated as a placeholder link, reproduced as `href="#"`).
-- Footer "Community" and "Support" columns (Conferences, Summer Camps, Schools, Faith Partners, Help Centre, Privacy, Terms) have no discoverable destination routes on the live site (not in sitemap) — reproduced as placeholder `href="#"` links, consistent with the live site's apparent placeholder state.
+- Footer "Community" column's first item, "Zelophi Kids", now links to `/community`; the remaining items (Conferences, Summer Camps, Schools, Faith Partners) and all of "Support" (Help Centre, Privacy, Terms) still have no discoverable destination — left as placeholder `href="#"` links, unchanged.
 
 ## Responsive behavior summary
 
@@ -110,4 +136,4 @@ Zelophi (zelophi.com)
 
 ## Shared components
 
-Header, mobile nav panel, Final CTA band, and Footer are identical across both routes — implemented once and reused in the clone (`partials` pattern via shared CSS classes + duplicated static markup, since this is a static HTML/CSS/JS build with no server templating).
+Header, mobile nav panel, Final CTA band, and Footer are identical across all three routes — implemented once and reused in the clone (`partials` pattern via shared CSS classes + duplicated static markup, since this is a static HTML/CSS/JS build with no server templating). The Community page's final CTA band reuses the exact `.cta-band` component with page-specific copy, same as Home.

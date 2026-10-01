@@ -32,6 +32,14 @@
   --neutral-bg: #F3F4F6;
   --neutral-icon: #6E6E7A;
 
+  /* Community age-group accents (Zelophi Kids) */
+  --ruby: #9C2B3A;
+  --ruby-bg: #FBEAEC;
+  --beryl: #3E8E86;
+  --beryl-bg: #E9F5F3;
+  --amber: #C77D1D;
+  --amber-bg: #FBF1DE;
+
   /* Type */
   --font-display: "Faculty Glyphic", "Faculty Glyphic Placeholder", serif;
   --font-body: "DM Sans", "DM Sans Placeholder", sans-serif;
@@ -771,6 +779,123 @@ p { margin: 0; }
 .contact-hero__photo img { width: 100%; height: 100%; object-fit: cover; }
 
 /* =========================================================
+   Community page
+   ========================================================= */
+.community-hero {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 16px 0;
+  text-align: center;
+}
+.community-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.12;
+  letter-spacing: -0.6px;
+  color: var(--ink-warm-black);
+  margin: 0 0 24px;
+}
+.community-hero__lede {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink-soft-black);
+  max-width: 560px;
+  margin: 0 auto 12px;
+}
+.community-hero__sub {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: var(--neutral-icon);
+  margin: 0 0 32px;
+}
+
+.program-section { padding: 140px 16px 0; }
+.program-section--tight { padding-top: 96px; }
+
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+.age-card {
+  background: var(--cream-bg-soft);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border-top: 4px solid var(--accent, var(--brand-green));
+}
+.age-card__age {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--accent, var(--brand-green));
+  background: var(--accent-bg, var(--mint-bg));
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  margin-bottom: 16px;
+}
+.age-card h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--ink-black);
+  margin: 0 0 10px;
+}
+.age-card p { font-size: 14px; line-height: 1.5; color: var(--ink-soft-black); }
+.age-card--ruby   { --accent: var(--ruby);   --accent-bg: var(--ruby-bg); }
+.age-card--beryl  { --accent: var(--beryl);  --accent-bg: var(--beryl-bg); }
+.age-card--amber  { --accent: var(--amber);  --accent-bg: var(--amber-bg); }
+.age-card--emerald{ --accent: var(--brand-green); --accent-bg: var(--mint-bg); }
+
+.activity-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.inclusion-panel {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.inclusion-list {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin: 32px auto;
+  text-align: left;
+}
+.inclusion-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 16px;
+  color: var(--ink-black);
+  padding: 8px 0;
+}
+.inclusion-list li svg { flex-shrink: 0; margin-top: 3px; }
+.inclusion-note { font-size: 15px; color: var(--neutral-icon); margin-bottom: 40px; }
+.program-details {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: var(--ink-soft-black);
+  margin-bottom: 24px;
+}
+.program-details strong { color: var(--ink-black); font-weight: 500; }
+
+.cta-band h2.cta-band__wide { max-width: 640px; }
+
+/* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 1199px) {
@@ -779,6 +904,8 @@ p { margin: 0; }
   }
   .quote p { font-size: 38px; }
   .how-grid { grid-template-columns: repeat(2, 1fr); }
+  .community-hero h1 { font-size: 36px; }
+  .age-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 990px) {
@@ -790,6 +917,7 @@ p { margin: 0; }
   .contact-hero__photo { order: -1; height: 320px; }
   .cta-band { margin: 100px auto; }
   .cta-band__inner { flex-direction: column; align-items: flex-start; text-align: left; }
+  .activity-row { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 767px) {
@@ -816,4 +944,12 @@ p { margin: 0; }
   .footer-top { grid-template-columns: 1fr; gap: 40px; }
   .cta-band__inner { padding: 40px 28px; }
   .photo-overlay__frame { min-height: 420px; }
+
+  .community-hero { padding-top: 32px; }
+  .community-hero h1 { font-size: 30px; }
+  .community-hero__lede { font-size: 16px; }
+  .program-section { padding-top: 80px; }
+  .program-section--tight { padding-top: 56px; }
+  .age-grid { grid-template-columns: 1fr; }
+  .activity-row { grid-template-columns: 1fr; }
 }

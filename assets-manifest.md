@@ -52,3 +52,7 @@ All assets below were downloaded directly from the live site's network payload (
 - **Videos:** none found on the site.
 - **Lottie/JSON animations:** none found (motion is Framer Motion DOM animation, not Lottie).
 - **Illustrations folder:** the site's "illustrations" (hero park scene, mascot) are delivered as the raster PNGs/GIFs listed above, not as separate vector illustration source files — there is nothing additional to extract beyond what's listed.
+
+## Open dependency — Community page imagery
+
+The content doc for `/community` (Zelophi Kids Connect / Zelophi Kids Arise) marks an `[IMAGES]` placeholder for the hero but supplies no actual file. None of the existing photo assets in `/assets/images` were reused there: they all depict kids using phones/tablets, which visually contradicts this program's "five days away from screens" messaging. Rather than force a mismatched photo in (or invent one), the page ships as a typography/color composition for now — **a real photograph (or illustration) for Zelophi Kids is a genuine open asset request**, not a silent substitution. See `design-system.md` §12 for the full note.

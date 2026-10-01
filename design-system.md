@@ -264,3 +264,38 @@ Per the replication skill's disclosure rule:
 2. **Scroll-linked motion** is recreated with `IntersectionObserver`/CSS transitions rather than Framer's proprietary Motion spring engine — visual trigger points and easing feel are matched by eye, not by portable source code (none exists to port).
 3. **Hero headline images** are the real extracted GIF assets, used as-is (not re-typeset) — this is the most faithful option since the originals are inline flowing text+icon compositions.
 4. **No contact form exists on the source site** — the clone does not fabricate one.
+
+---
+
+## 12. Community page additions (extending the system, not replacing it)
+
+Added when building `/community` (Zelophi Kids Connect / Zelophi Kids Arise), sourced from the supplied content doc rather than the original site (which has no community page). These are **additive tokens** layered onto the existing system — nothing above was changed.
+
+### New color tokens — age-group accents
+
+The content doc names a color per age group ("[ruby colour]", "[beryl colour]", "[amber colour]", "[emerald colour]") without supplying hex values, so these were chosen to read as natural siblings of the existing palette (same muted, warm-neutral saturation level as `--ink-900`/`--brand-green`, not saturated "brand-kit" colors):
+
+| Token | Hex | Tint bg | Usage |
+|---|---|---|---|
+| `--ruby` | `#9C2B3A` | `--ruby-bg` `#FBEAEC` | "Rubies" (ages 0–2) age-card accent |
+| `--beryl` | `#3E8E86` | `--beryl-bg` `#E9F5F3` | "Beryls" (ages 3–5) age-card accent |
+| `--amber` | `#C77D1D` | `--amber-bg` `#FBF1DE` | "Crystals" (ages 6–8) age-card accent — doc explicitly specifies amber for this group |
+| *(reused)* `--brand-green` / `--mint-bg` | `#24AE79` / `#EDFAF4` | — | "Emeralds" (ages 9–11) — reuses the existing brand green exactly rather than inventing a 4th new green, since "emerald" already *is* the site's brand color |
+
+### New components (built from existing patterns, not new visual language)
+
+| Component | Built from | Notes |
+|---|---|---|
+| `.community-hero` | `.section-head` typography scale, centered | Page intro: eyebrow + H1 + lede + mono caption + CTA |
+| `.age-grid` / `.age-card` | `.how-grid` grid mechanics + `.feature-mini` card surface | 4-up card row, cream-soft surface, colored top border + pill chip per age group |
+| `.activity-row` | `.feature-mini-row`, 3-column variant | Reuses `.feature-mini` card/icon exactly |
+| `.inclusion-list` | `.price-card__list` checklist pattern | Same check-icon-in-circle SVG, standalone (not inside a pricing card) |
+| `.program-section` | Same 140px/96px top-rhythm as `.features-section`/`.pricing-section` | Vertical pacing stays consistent with the rest of the site |
+
+The quote block, final CTA band, header, mobile nav, and footer on the Community page are the **exact existing classes** (`.quote`, `.cta-band`, `.site-header`, `.mobile-nav`, `.site-footer`) — zero duplication, zero new variants needed for those.
+
+### Declared content/asset gaps (Community page)
+
+1. The source doc marks `[IMAGES]` for the Kids Connect intro but supplies no actual image. The existing asset library's photos (tablet/phone-in-hand lifestyle shots) visually contradict this program's "five days away from screens" message, so no existing asset was force-fitted — the section intentionally ships as a typography/color composition instead, matching how the Home page's own Pricing/FAQ/Features sections are built without photography. **A real photo for Zelophi Kids Connect/Arise is an open asset dependency**, not silently substituted.
+2. The doc's `[sign-up form]` CTA target doesn't exist yet — both "Reserve your child's place" and "Save your child's place" route to `/contact` (the nearest existing equivalent) rather than a dead link. This is a disclosed placeholder, not a real form.
+3. `[OUR SERVICE PAGE]` in the doc's closing CTA maps to `index.html` — the home page genuinely is "the product" in this site's structure, so this is a direct mapping, not a substitution.
