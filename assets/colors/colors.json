@@ -1,0 +1,39 @@
+{
+  "surface": {
+    "cream-bg": { "hex": "#F6F4EC", "rgb": "246, 244, 236", "usage": "default page background" },
+    "cream-bg-light": { "hex": "#F9F7F1", "rgb": "249, 247, 241", "usage": "lighter card/section surface" },
+    "cream-bg-muted": { "hex": "#E9E7DB", "rgb": "233, 231, 219", "usage": "pricing section background" },
+    "cream-bg-soft": { "hex": "#F2EFEA", "rgb": "242, 239, 234", "usage": "secondary card surface" },
+    "white": { "hex": "#FFFFFF", "rgb": "255, 255, 255", "usage": "card backgrounds" },
+    "nav-pill-bg": { "hex": "#D8D4C3", "rgb": "216, 212, 195", "alpha": 0.4, "usage": "floating nav pill background" }
+  },
+  "ink": {
+    "ink-900": { "hex": "#1E1509", "rgb": "30, 21, 9", "usage": "dark panel bg, nav CTA bg, footer bg" },
+    "ink-800": { "hex": "#2F210F", "rgb": "47, 33, 15", "usage": "pricing annual card bg" },
+    "ink-black": { "hex": "#000000", "rgb": "0, 0, 0", "usage": "default text" },
+    "ink-soft-black": { "hex": "#191919", "rgb": "25, 25, 25", "usage": "headings, FAQ text" },
+    "ink-warm-black": { "hex": "#0D0503", "rgb": "13, 5, 3", "usage": "large headline text" }
+  },
+  "brand": {
+    "brand-green": { "hex": "#24AE79", "rgb": "36, 174, 121", "usage": "primary accent, buttons, checks, eyebrow labels" },
+    "mint-bg": { "hex": "#EDFAF4", "rgb": "237, 250, 244", "usage": "success chip background" }
+  },
+  "status": {
+    "success-bg": { "hex": "#EDFAF4", "usage": "check icon chip bg" },
+    "success-icon": { "hex": "#24AE79", "usage": "check icon fill/stroke" },
+    "error-bg": { "hex": "#FEF2F2", "usage": "x icon chip bg" },
+    "error-icon": { "hex": "#EF4444", "usage": "x icon stroke" },
+    "neutral-bg": { "hex": "#F3F4F6", "usage": "neutral check chip bg" },
+    "neutral-icon": { "hex": "#6E6E7A", "usage": "neutral icon stroke / muted text" }
+  },
+  "text-opacity-on-dark": {
+    "100": "rgba(255,255,255,1)",
+    "80": "rgba(255,255,255,0.8)",
+    "51": "rgba(255,255,255,0.51)",
+    "45": "rgba(255,255,255,0.45)",
+    "40": "rgba(255,255,255,0.4)"
+  },
+  "text-opacity-on-cream": {
+    "51": "rgba(246,244,236,0.51)"
+  }
+}
