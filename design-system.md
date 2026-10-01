@@ -284,18 +284,26 @@ The content doc names a color per age group ("[ruby colour]", "[beryl colour]", 
 
 ### New components (built from existing patterns, not new visual language)
 
+v2 leans much harder on Home's actual visual patterns — image-driven sections and icon cards — rather than the text-only v1 layout:
+
 | Component | Built from | Notes |
 |---|---|---|
-| `.community-hero` | `.section-head` typography scale, centered | Page intro: eyebrow + H1 + lede + mono caption + CTA |
-| `.age-grid` / `.age-card` | `.how-grid` grid mechanics + `.feature-mini` card surface | 4-up card row, cream-soft surface, colored top border + pill chip per age group |
-| `.activity-row` | `.feature-mini-row`, 3-column variant | Reuses `.feature-mini` card/icon exactly |
-| `.inclusion-list` | `.price-card__list` checklist pattern | Same check-icon-in-circle SVG, standalone (not inside a pricing card) |
+| `.community-hero` | `.hero__body` 2-col grid mechanics | Eyebrow + H1 + lede + mono caption + CTA on the left, full-height rounded photo on the right — same split-hero shape as Home |
+| `.age-grid` / `.age-card` | `.how-grid` grid mechanics + `.feature-mini` card surface | 4-up card row: `.icon-badge` icon, colored top border, age-range pill chip, title, description |
+| `.icon-badge` | New, but matches the visual weight/footprint of Home's `.how-card img` (44px, rounded, colorful) | A tinted rounded-square housing a small inline-SVG glyph; reused for age-cards and the Our Activity cards. No illustration asset existed for these concepts, so flat-color SVG glyphs were drawn in the same chunky/rounded spirit as Home's cloud/bell/shield/folder icons rather than left as plain checkmarks |
+| *(reused as-is)* `.photo-band` | Exact Home component | Full-bleed plain photo break after the age-group grid (`CeIgaekHgAC8KlB1gPp0skYMw.jpg`) |
+| *(reused as-is)* `.photo-overlay` / `.photo-overlay__frame` | Exact Home component | Full-bleed photo + overlaid H2 marks the transition into "Zelophi Kids Arise" (`HaLeB738mRi3vm7dLfC4guDzMA.png`), identical to how Home uses it to transition into "How it works" |
+| *(reused as-is)* `.dark-panel` / `.dark-panel__inner` / `.how-grid` / `.how-card` | Exact Home component | "Our Activity" is now a literal dark rounded panel with eyebrow + H2 + icon cards — the same component as Home's "How it works" section, just with 3 cards instead of 4 (`.how-grid--3` modifier: `grid-template-columns: repeat(3,1fr)`, collapses via the same existing `.how-grid` breakpoint rules) |
+| `.inclusion-list` | `.price-card__list` checklist pattern | Same check-icon-in-circle SVG, standalone (not inside a pricing card) — kept deliberately plain for pacing contrast against the image-heavy sections around it |
 | `.program-section` | Same 140px/96px top-rhythm as `.features-section`/`.pricing-section` | Vertical pacing stays consistent with the rest of the site |
 
-The quote block, final CTA band, header, mobile nav, and footer on the Community page are the **exact existing classes** (`.quote`, `.cta-band`, `.site-header`, `.mobile-nav`, `.site-footer`) — zero duplication, zero new variants needed for those.
+The quote block, final CTA band, header, mobile nav, and footer are the **exact existing classes** (`.quote`, `.cta-band`, `.site-header`, `.mobile-nav`, `.site-footer`) — zero duplication.
+
+**Photo reuse:** the three real photographs in `/assets/images` (`IOCOPXibM…jpg`, `CeIgaekH…jpg`, `HaLeB738…png`) are each already used once elsewhere on Home/Contact. v2 reuses each of them again here, once each, for the hero, photo-band, and photo-overlay respectively — consistent with "reuse existing imagery where appropriate" rather than leaving the page as a plain text composition. See the open dependency note below.
 
 ### Declared content/asset gaps (Community page)
 
-1. The source doc marks `[IMAGES]` for the Kids Connect intro but supplies no actual image. The existing asset library's photos (tablet/phone-in-hand lifestyle shots) visually contradict this program's "five days away from screens" message, so no existing asset was force-fitted — the section intentionally ships as a typography/color composition instead, matching how the Home page's own Pricing/FAQ/Features sections are built without photography. **A real photo for Zelophi Kids Connect/Arise is an open asset dependency**, not silently substituted.
-2. The doc's `[sign-up form]` CTA target doesn't exist yet — both "Reserve your child's place" and "Save your child's place" route to `/contact` (the nearest existing equivalent) rather than a dead link. This is a disclosed placeholder, not a real form.
-3. `[OUR SERVICE PAGE]` in the doc's closing CTA maps to `index.html` — the home page genuinely is "the product" in this site's structure, so this is a direct mapping, not a substitution.
+1. The source doc marks `[IMAGES]` for the Kids Connect intro but supplies no actual image, and no community/ministry-specific photography exists in the asset library — v2 reuses Home's three existing lifestyle photos (see above) rather than leaving the page photo-free. **A real photo shot specifically for Zelophi Kids Connect/Arise is still an open asset request**; what's here is a disclosed reuse of existing brand photography, not new/matching photography.
+2. The age-card and "Our Activity" icons (heart, book, chat bubble, compass, calendar, shield-check, flag) are new flat-SVG glyphs drawn to match the color/weight of Home's existing icon style — no source icon asset existed for these specific concepts, so these were illustrated rather than left as generic checkmarks.
+3. The doc's `[sign-up form]` CTA target doesn't exist yet — both "Reserve your child's place" and "Save your child's place" route to `/contact` (the nearest existing equivalent) rather than a dead link. This is a disclosed placeholder, not a real form.
+4. `[OUR SERVICE PAGE]` in the doc's closing CTA maps to `index.html` — the home page genuinely is "the product" in this site's structure, so this is a direct mapping, not a substitution.

@@ -55,4 +55,12 @@ All assets below were downloaded directly from the live site's network payload (
 
 ## Open dependency — Community page imagery
 
-The content doc for `/community` (Zelophi Kids Connect / Zelophi Kids Arise) marks an `[IMAGES]` placeholder for the hero but supplies no actual file. None of the existing photo assets in `/assets/images` were reused there: they all depict kids using phones/tablets, which visually contradicts this program's "five days away from screens" messaging. Rather than force a mismatched photo in (or invent one), the page ships as a typography/color composition for now — **a real photograph (or illustration) for Zelophi Kids is a genuine open asset request**, not a silent substitution. See `design-system.md` §12 for the full note.
+The content doc for `/community` (Zelophi Kids Connect / Zelophi Kids Arise) marks an `[IMAGES]` placeholder for the hero but supplies no actual file, and no community/ministry-specific photography exists in `/assets/images`. v2 of the page reuses three existing lifestyle photos from Home/Contact instead of shipping photo-free:
+
+| Image | Reused for | Also appears on |
+|---|---|---|
+| `IOCOPXibMLFhGrF0yVeofRGcs.jpg` | Community hero (split hero visual) | Home — full-bleed family photo band |
+| `CeIgaekHgAC8KlB1gPp0skYMw.jpg` | Full-bleed photo band after the age-group grid | Home — hero stat-card photo |
+| `HaLeB738mRi3vm7dLfC4guDzMA.png` | Photo-overlay transition into "Zelophi Kids Arise" | Contact — "Get in touch" side photo |
+
+This is disclosed reuse of existing brand photography, not purpose-shot imagery — **a real photo/video asset for Zelophi Kids specifically (ideally depicting the in-person Connect/Arise program) is still a genuine open request**, not silently filled. See `design-system.md` §12 for the full note, including the new flat-SVG icon glyphs (heart/book/chat/compass/calendar/shield/flag) drawn for the age-group and activity cards since no matching icon assets existed either.

@@ -782,11 +782,15 @@ p { margin: 0; }
    Community page
    ========================================================= */
 .community-hero {
-  max-width: 860px;
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: 48px 16px 0;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
 }
+.community-hero__copy { max-width: 520px; }
 .community-hero h1 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -800,8 +804,7 @@ p { margin: 0; }
   font-size: 18px;
   line-height: 1.5;
   color: var(--ink-soft-black);
-  max-width: 560px;
-  margin: 0 auto 12px;
+  margin: 0 0 12px;
 }
 .community-hero__sub {
   font-family: var(--font-mono);
@@ -810,9 +813,26 @@ p { margin: 0; }
   color: var(--neutral-icon);
   margin: 0 0 32px;
 }
+.community-hero__visual {
+  border-radius: var(--radius-3xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 3.3;
+}
+.community-hero__visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .program-section { padding: 140px 16px 0; }
 .program-section--tight { padding-top: 96px; }
+
+.icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.icon-badge svg { width: 22px; height: 22px; }
 
 .age-grid {
   display: grid;
@@ -827,6 +847,7 @@ p { margin: 0; }
   padding: 24px;
   border-top: 4px solid var(--accent, var(--brand-green));
 }
+.age-card .icon-badge { background: var(--accent-bg, var(--mint-bg)); margin-bottom: 20px; }
 .age-card__age {
   display: inline-block;
   font-family: var(--font-mono);
@@ -853,13 +874,8 @@ p { margin: 0; }
 .age-card--amber  { --accent: var(--amber);  --accent-bg: var(--amber-bg); }
 .age-card--emerald{ --accent: var(--brand-green); --accent-bg: var(--mint-bg); }
 
-.activity-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: var(--container-max);
-  margin: 0 auto;
-}
+.how-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.how-card .icon-badge { margin-bottom: 24px; }
 
 .inclusion-panel {
   max-width: 760px;
@@ -917,7 +933,9 @@ p { margin: 0; }
   .contact-hero__photo { order: -1; height: 320px; }
   .cta-band { margin: 100px auto; }
   .cta-band__inner { flex-direction: column; align-items: flex-start; text-align: left; }
-  .activity-row { grid-template-columns: 1fr 1fr; }
+  .community-hero { grid-template-columns: 1fr; gap: 40px; }
+  .community-hero__copy { max-width: 100%; }
+  .community-hero__visual { aspect-ratio: 16 / 9; }
 }
 
 @media (max-width: 767px) {
@@ -951,5 +969,4 @@ p { margin: 0; }
   .program-section { padding-top: 80px; }
   .program-section--tight { padding-top: 56px; }
   .age-grid { grid-template-columns: 1fr; }
-  .activity-row { grid-template-columns: 1fr; }
 }
